@@ -1,0 +1,63 @@
+Opinion Rating Predictor
+
+
+
+ -> Overview
+
+The "Opinion Rating Predictor" is a Python script that uses linear regression to predict opinion ratings based on textual reviews. It leverages the scikit-learn library for machine learning tasks and Pandas for data manipulation.
+
+
+
+ -> Dependencies
+
+Python 3.10
+pandas
+scikit-learn
+
+
+
+ -> Code Structure
+
+* mini_dataset_1000.csv
+Example dataset file (books reviews).
+Due to the fact that the downloaded database is very large (2.6 GB), I use only part of it to train the model. I read 100 examples (chunksize=100) 10 times. In total, my database consists of 1000 examples.
+Link: https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews/data
+
+* run.py
+Main script file containing the implementation.
+
+
+
+ -> Functionality
+
+* get_mini_dataset():
+
+Now this function is commented out. It was used just to trim a large database and save part of it in the mini_dataset_1000.csv.
+
+* load_data_from_file():
+
+Reads the dataset (mini_dataset_1000.csv) and extracts review texts and corresponding scores.
+
+* prepare_train_and_test_data(review_and_score):
+
+Splits the data into training(80%) and testing(20%) sets, performs TF-IDF vectorization on the training data, and returns relevant variables.
+
+* train_model(x_train, y_train):
+
+Trains a linear regression model using the provided training data.
+
+* test_model(test_data, vector, model):
+
+Tests the trained model on a subset of the data, displaying predicted scores alongside actual scores for comparison.
+
+* main():
+
+Orchestrates the entire process by calling the above functions in sequence.
+
+
+
+ -> Notes
+
+	Alena Zhukouskaya
+	
+
